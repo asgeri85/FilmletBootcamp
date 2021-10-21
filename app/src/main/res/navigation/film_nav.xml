@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/film_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.filmlerkotlinbootcamp.view.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_filmFragment"
+            app:destination="@id/filmFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/filmFragment"
+        android:name="com.example.filmlerkotlinbootcamp.view.FilmFragment"
+        android:label="fragment_film"
+        tools:layout="@layout/fragment_film" >
+        <action
+            android:id="@+id/action_filmFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <argument
+            android:name="kategori"
+            app:argType="com.example.filmlerkotlinbootcamp.model.Kategori" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.filmlerkotlinbootcamp.view.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="film"
+            app:argType="com.example.filmlerkotlinbootcamp.model.Film" />
+    </fragment>
+</navigation>
